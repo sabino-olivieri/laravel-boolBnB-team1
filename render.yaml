@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: laravel-boolbnb-team1
+    runtime: php
+    buildCommand: |
+      composer install
+      npm install
+      npm run build
+    startCommand: vendor/bin/heroku-php-apache2 public/

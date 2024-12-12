@@ -18,4 +18,7 @@ export default defineConfig({
             'jquery': path.resolve(__dirname, 'node_modules/jquery'),
         },
     },
+    build: {
+        outDir: 'public/dist',
+    },
 });
