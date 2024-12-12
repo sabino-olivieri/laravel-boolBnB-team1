@@ -28,8 +28,9 @@ RUN composer install --no-interaction --optimize-autoloader --no-dev
 # Imposta permessi
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Configura Apache
+# Configura Apache per puntare a /public
 RUN a2enmod rewrite
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
-# Esponi porta 80
-EXPOSE 80
+# Esegui migrazioni e avvia Apache
+CMD php artisan migrate --force && apache2-foreground
