@@ -1,9 +1,18 @@
 services:
   - type: web
-    name: laravel-boolbnb-team1
+    name: laravel-boolbnb
     runtime: php
+    plan: free
     buildCommand: |
-      composer install
+      composer install --no-dev --optimize-autoloader
       npm install
       npm run build
+      php artisan key:generate
+      php artisan config:clear
+      php artisan route:clear
     startCommand: vendor/bin/heroku-php-apache2 public/
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
