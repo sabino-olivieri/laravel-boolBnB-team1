@@ -9,6 +9,7 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    base: '/build/',
     // Add resolve object and aliases
     resolve: {
         alias: {
@@ -19,6 +20,16 @@ export default defineConfig({
         },
     },
     build: {
-        outDir: 'public/dist',
-    },
+        outDir: 'public/build',
+        rollupOptions: {
+            output: {
+                assetFileNames: (assetInfo) => {
+                    if (/\.woff2?$|\.ttf$|\.eot$|\.svg$/.test(assetInfo.name)) {
+                        return 'webfonts/[name][extname]'; // Font files go to 'webfonts'
+                    }
+                    return 'assets/[name][extname]'; // Default for other assets
+                },
+            },
+        },
+    }
 });

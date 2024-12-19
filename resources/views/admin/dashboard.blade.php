@@ -32,7 +32,7 @@
             @endphp
             @if (count(Flat::where('user_id', Auth::id())->get()) >= 1)
                 <div class="col-12 col-md-6 col-lg-4 mb-4" style="height: 180px; width: 200px">
-                    <a href="http://127.0.0.1:8000/admin/flats"
+                    <a href="{{ route('admin.flats.index') }}"
                         class="card text-center h-100 text-decoration-none text-dark">
                         <div
                             class="card-body d-flex flex-column justify-content-center align-items-center ms_color-dashboard hover-effect">
@@ -44,7 +44,7 @@
             @endif
             <!-- Card Aggiungi Appartamento -->
             <div class="col-12 col-md-6 col-lg-4 mb-4" style="height: 180px; width: 200px">
-                <a href="http://127.0.0.1:8000/admin/flats/create"
+                <a href="{{ route('admin.flats.create') }}"
                     class="card text-center h-100 text-decoration-none text-dark">
                     <div
                         class="card-body d-flex flex-column justify-content-center align-items-center ms_color-dashboard hover-effect">
@@ -56,7 +56,7 @@
             <!-- Card Messaggi -->
             @if (count(Flat::where('user_id', Auth::id())->get()) >= 1)
                 <div class="col-12 col-md-6 col-lg-4 mb-4" style="height: 180px; width: 200px">
-                    <a href="http://127.0.0.1:8000/admin/messages"
+                    <a href="{{ route('admin.messages.index') }}"
                         class="card text-center h-100 text-decoration-none text-dark">
                         <div
                             class="card-body d-flex flex-column justify-content-center align-items-center ms_color-dashboard hover-effect">
