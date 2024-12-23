@@ -14,20 +14,18 @@ BoolBnB è una piattaforma che permette ai proprietari di appartamenti di regist
 
 ### REQUISITI:
 
--	PHP 7.4 o superiore
--	Laravel 8 o superiore
+-	PHP 8.2 o superiore
+-	Laravel 10 o superiore
 -	MySQL 5.7 o superiore
 
 ### SERVIZI ESTERNI UTILIZZATI:
 
--	TomTom API: Utilizzata per ottenere latitudine e longitudine a partire da un indirizzo.
 -	Braintree Payments: Utilizzato per la gestione dei pagamenti.
 
 ### FUNZIONALITA’:
 -	Registrazione e autenticazione dei proprietari: I proprietari possono registrarsi, autenticarsi e gestire i propri profili.
 -	Gestione degli appartamenti: I proprietari possono aggiungere, modificare e rimuovere appartamenti.
--	Ricerca degli appartamenti: Gli utenti possono cercare appartamenti e applicare filtri di ricerca.
--	Messaggistica: Gli utenti possono inviare messaggi ai proprietari per richiedere informazioni.
+-	Messaggistica: I proprietari possono visualizare i messaggi ricevuti per i propri appartamenti.
 -	Sponsorizzazione degli appartamenti: I proprietari possono sponsorizzare i propri appartamenti per aumentarne la visibilità.
 -	Statistiche: I proprietari possono visualizzare le statistiche relative ai messaggi ricevuti per i propri appartamenti.
 
